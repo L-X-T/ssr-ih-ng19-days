@@ -1,0 +1,14 @@
+/.angular
+/.nx/cache
+/coverage
+/dist
+
+/.idea
+/.vscode
+
+/mock-data
+/screens
+
+node_modules
+
+/.nx/workspace-data
