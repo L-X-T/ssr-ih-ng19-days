@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+img {
+  max-width: 400px;
+  max-height: 225px;
+  object-fit: cover;
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
