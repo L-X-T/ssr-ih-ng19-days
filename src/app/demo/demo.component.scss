@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  row-gap: 2rem;
+  column-gap: 1.5rem;
+  max-width: calc(800px + 3rem);
+  margin: 0 auto;
+
+  justify-items: center;
+  align-items: center;
+}
+
+.item {
+  width: 400px;
+  height: 225px;
+  background-color: plum;
+
+  margin: auto;
+  font-size: 2rem;
+  line-height: 225px;
+  text-align: center;
+}
