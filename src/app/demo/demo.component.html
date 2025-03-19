@@ -1,6 +1,6 @@
 <div class="container">
   <div class="item">
-    @defer (on viewport) {
+    @defer (on viewport; hydrate never) {
       <app-victor />
     } @placeholder (minimum 4200ms) {
       <img src="placeholder.svg" />
@@ -11,7 +11,7 @@
     }
   </div>
   <div class="item">
-    @defer (on timer(4200ms); prefetch on idle) {
+    @defer (on viewport; hydrate on idle) {
       <app-noemie />
     } @placeholder {
       <img src="placeholder.svg" />
@@ -22,7 +22,7 @@
     }
   </div>
   <div class="item">
-    @defer (on hover) {
+    @defer (on viewport; hydrate on hover) {
       <app-marcus />
     } @placeholder {
       <img src="placeholder.svg" />
@@ -33,7 +33,7 @@
     }
   </div>
   <div class="item">
-    @defer (on interaction) {
+    @defer (on viewport; hydrate on interaction) {
       <app-justine />
     } @placeholder {
       <img src="placeholder.svg" />
