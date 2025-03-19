@@ -1,6 +1,6 @@
 <div class="container">
   <div class="item">
-    @defer (on immediate) {
+    @defer (on viewport; hydrate never) {
       <app-victor />
     } @placeholder {
       <img src="placeholder.svg" alt="Placeholder" />
@@ -10,8 +10,8 @@
       <strong>Victor loading error.</strong>
     }
   </div>
-  <div class="item" #itemDiv>
-    @defer (on hover(itemDiv); prefetch on idle) {
+  <div class="item">
+    @defer (on idle; hydrate on hover) {
       <app-noemie />
     } @placeholder {
       <img src="placeholder.svg" alt="Placeholder" />
@@ -21,9 +21,8 @@
       <strong>Noemie loading error.</strong>
     }
   </div>
-  <div class="item" style="position: relative">
-    <button style="position: absolute; z-index: 1" type="button" #interactionButton>Show me the image</button>
-    @defer (on interaction(interactionButton)) {
+  <div class="item">
+    @defer (on hover; hydrate on interaction) {
       <app-marcus />
     } @placeholder {
       <img src="placeholder.svg" alt="Placeholder" />
@@ -34,7 +33,7 @@
     }
   </div>
   <div class="item">
-    @defer (on viewport; on timer(4200ms); when showJustine()) {
+    @defer (on viewport; on timer(4200ms); when showJustine(); hydrate on interaction) {
       <app-justine />
     } @placeholder {
       <img src="placeholder.svg" alt="Placeholder" />
