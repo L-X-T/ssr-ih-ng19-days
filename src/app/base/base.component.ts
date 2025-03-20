@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-base',
   imports: [],
   template: '',
-  styleUrl: './base.component.scss',
 })
 export class BaseComponent {
   protected onClick(event: Event): void {
