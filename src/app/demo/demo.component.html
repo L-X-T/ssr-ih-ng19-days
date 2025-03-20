@@ -1,14 +1,47 @@
 <div class="container">
   <div class="item">
-    <app-victor />
+    @defer (on immediate) {
+      <app-victor />
+    } @placeholder {
+      <img src="placeholder.svg" alt="Placeholder" />
+    } @loading {
+      <span>Victor is being loaded.</span>
+    } @error {
+      <strong>Victor loading error.</strong>
+    }
+  </div>
+  <div class="item" #itemDiv>
+    @defer (on hover(itemDiv); prefetch on idle) {
+      <app-noemie />
+    } @placeholder {
+      <img src="placeholder.svg" alt="Placeholder" />
+    } @loading {
+      <span>Noemie is being loaded.</span>
+    } @error {
+      <strong>Noemie loading error.</strong>
+    }
+  </div>
+  <div class="item" style="position: relative">
+    <button style="position: absolute; z-index: 1" type="button" #interactionButton>Show me the image</button>
+    @defer (on interaction(interactionButton)) {
+      <app-marcus />
+    } @placeholder {
+      <img src="placeholder.svg" alt="Placeholder" />
+    } @loading {
+      <span>Marcus is being loaded.</span>
+    } @error {
+      <strong>Marcus loading error.</strong>
+    }
   </div>
   <div class="item">
-    <app-noemie />
-  </div>
-  <div class="item">
-    <app-marcus />
-  </div>
-  <div class="item">
-    <app-justine />
+    @defer (on viewport; on timer(4200ms); when showJustine()) {
+      <app-justine />
+    } @placeholder {
+      <img src="placeholder.svg" alt="Placeholder" />
+    } @loading {
+      <span>Justine is being loaded.</span>
+    } @error {
+      <strong>Justine loading error.</strong>
+    }
   </div>
 </div>
