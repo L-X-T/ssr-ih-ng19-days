@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ssr-ih-ng19-days": {
+    "ssr-ih-ng20": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ssr-ih-ng19-days",
+            "outputPath": "dist/ssr-ih-ng20",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ssr-ih-ng19-days:build:production"
+              "buildTarget": "ssr-ih-ng20:build:production"
             },
             "development": {
-              "buildTarget": "ssr-ih-ng19-days:build:development"
+              "buildTarget": "ssr-ih-ng20:build:development"
             }
           },
           "defaultConfiguration": "development"

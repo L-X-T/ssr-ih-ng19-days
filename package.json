@@ -1,15 +1,15 @@
 {
-  "name": "ssr-ih-ng19-days",
+  "name": "ssr-ih-ng20",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --no-hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve": "npx serve -s dist/ssr-ih-ng19-days/browser",
-    "bs": "ng b && npx serve -s dist/ssr-ih-ng19-days/browser",
-    "serve:ssr:ssr-ih-ng19-days": "node dist/ssr-ih-ng19-days/server/server.mjs"
+    "serve": "npx serve dist/ssr-ih-ng20/browser",
+    "bs": "ng b && npx serve dist/ssr-ih-ng20/browser",
+    "serve:ssr:ssr-ih-ng20": "node dist/ssr-ih-ng20/server/server.mjs"
   },
   "private": true,
   "dependencies": {
