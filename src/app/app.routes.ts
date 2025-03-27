@@ -10,7 +10,12 @@ export const routes: Routes = [
   },
   {
     path: 'demo',
-    title: 'Defer & Incremental Hydration',
+    title: 'Demo', // note that this will be ignored and replaced by the dynamic title
     component: DemoComponent,
+  },
+  {
+    path: 'demo/:id',
+    title: 'Demo #id', // note that this will be ignored and replaced by the dynamic title
+    loadComponent: () => import('./demo/demo.component'),
   },
 ];
