@@ -3,7 +3,7 @@ import { VictorComponent } from '../victor/victor.component';
 import { NoemieComponent } from '../noemie/noemie.component';
 import { MarcusComponent } from '../marcus/marcus.component';
 import { JustineComponent } from '../justine/justine.component';
-import { Title } from '@angular/platform-browser';
+import { PageTitleStrategy } from '../page-tite-strategy';
 
 @Component({
   selector: 'app-demo',
@@ -12,13 +12,13 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './demo.component.scss',
 })
 export class DemoComponent {
-  private readonly title = inject(Title);
+  private readonly pageTitleStrategy = inject(PageTitleStrategy);
 
   readonly id = input<number | undefined>();
   readonly showJustine = signal(false);
 
   constructor() {
-    effect(() => this.title.setTitle(this.id() !== undefined ? `Page #${this.id()} - Demo` : 'Page - Demo'));
+    effect(() => this.pageTitleStrategy.setTitle(this.id() !== undefined ? `Page #${this.id()}` : 'Page'));
 
     afterNextRender(() => {
       setTimeout(() => this.showJustine.set(true), 4_200);
